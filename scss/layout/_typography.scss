@@ -1,0 +1,180 @@
+@font-face {
+    font-family: 'montserrat_blackregular';
+    src: url('../fonts/montserrat-black-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat_mediumregular';
+    src: url('../fonts/montserrat-medium-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat_semiboldregular';
+    src: url('../fonts/montserrat-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat_extraboldregular';
+    src: url('../fonts/montserrat-extrabold-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat_lightregular';
+    src: url('../fonts/montserrat-light-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dancing_scriptbold';
+    src: url('../fonts/dancingscript-bold-webfont.woff2') format('woff2'),
+         url('../fonts/dancingscript-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?jbpjeg');
+    src:  url('../fonts/icomoon.eot?jbpjeg#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?jbpjeg') format('truetype'),
+      url('../fonts/icomoon.woff?jbpjeg') format('woff'),
+      url('../fonts/icomoon.svg?jbpjeg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  [class^="ico-"], [class*=" ico-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .ico-arrow-right:before {
+    content: "\e900";
+  }
+  .ico-arrow-left:before {
+    content: "\e901";
+  }
+  .ico-book-download:before {
+    content: "\e902";
+    color: #fd0;
+  }
+  .ico-books:before {
+    content: "\e903";
+  }
+  .ico-brain:before {
+    content: "\e904";
+  }
+  .ico-devices:before {
+    content: "\e905";
+    color: #fd0;
+  }
+  .ico-leaf:before {
+    content: "\e906";
+    color: #fd0;
+  }
+  .ico-logo:before {
+    content: "\e907";
+  }
+  .ico-masks:before {
+    content: "\e908";
+  }
+  .ico-pen:before {
+    content: "\e909";
+  }
+
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-text-size-adjust: none;
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
+    font-size: 100%;
+
+    @include min-screen(1340px) {
+        font-size: 100% !important;
+    }
+
+    @include screen(801px,1023px) {
+        font-size: 90% !important;
+    }
+
+    @include screen(768px,800px) {
+        font-size: 87% !important;
+    }
+
+    @include screen(640px,767px) {
+        font-size: 85% !important;
+    }
+
+    @include screen(600px,639px) {
+        font-size: 82% !important;
+    }
+
+    @include screen(480px,599px) {
+        font-size: 80% !important;
+    }
+
+    @include screen(375px,479px) {
+        font-size: 75% !important;
+    }
+
+    @include max-screen(374px) {
+        font-size: 73% !important;
+    }
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    font-weight: 400;
+    font-style: normal;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+address {
+    margin: 0;
+}

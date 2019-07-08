@@ -1,0 +1,157 @@
+@import "bourbon";
+
+@mixin clearfix {
+  overflow: hidden;
+  @include has-layout;
+}
+
+@mixin screen($res-min, $res-max) {
+    @media screen and (min-width: $res-min) and (max-width: $res-max) {
+        @content;
+    }
+}
+
+@mixin max-screen($res) {
+    @media screen and (max-width: $res) {
+        @content;
+    }
+}
+
+@mixin min-screen($res) {
+    @media screen and (min-width: $res) {
+        @content;
+    }
+}
+
+@mixin screen-height($res-min, $res-max) {
+    @media screen and (min-height: $res-min) and (max-height: $res-max) {
+        @content;
+    }
+}
+
+@mixin max-screen-height($res) {
+    @media screen and (max-height: $res) {
+        @content;
+    }
+}
+
+@mixin min-screen-height($res) {
+    @media screen and (min-height: $res) {
+        @content;
+    }
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+html {
+    font-size: 100%;
+}
+
+@mixin radial-gradient($from, $to) {
+    background: -moz-radial-gradient(bottom, circle cover, $from 0%, $to 60%);
+    background: -webkit-gradient(radial, bottom center, 0px, bottom center, 60%, color-stop(0%, $from), color-stop(60%, $to));
+    background: -webkit-radial-gradient(bottom, circle cover, $from 0%, $to 60%);
+    background: -o-radial-gradient(bottom, circle cover, $from 0%, $to 60%);
+    background: -ms-radial-gradient(bottom, circle cover, $from 0%, $to 60%);
+    background: radial-gradient(bottom, circle cover, $from 0%, $to 60%);
+    background-color: $from;
+}
+// convert px to vw
+@function get-vw($target) {
+    $vw-context: (1920*.01) * 1px;
+    @return ($target/$vw-context) * 1vw;
+}
+
+// convert px to rem
+$rem-base: 16px !default;
+
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+@function convert-to-rem($value, $base-value: $rem-base) {
+    $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+
+    @if $value == 0rem {
+        $value: 0;
+    }
+
+    @return $value;
+}
+
+@function rem($values, $base-value: $rem-base) {
+    $max: length($values);
+
+    @if $max == 1 {
+        @return convert-to-rem(nth($values, 1), $base-value);
+    }
+
+    $remValues: ();
+
+    @for $i from 1 through $max {
+        $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+    }
+
+    @return $remValues;
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+@mixin placeholder-shown {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:placeholder-shown {
+        @content;
+    }
+}
+
+
+@function stroke($stroke, $color) {
+  $shadow: ();
+  $from: $stroke*-1;
+  @for $i from $from through $stroke {
+   @for $j from $from through $stroke {
+      $shadow: append($shadow, $i*1px $j*1px 0 $color, comma);
+    }
+  }
+  @return $shadow;
+}
+
+
+@mixin stroke($stroke, $color) {
+  text-shadow: stroke($stroke, $color);
+}

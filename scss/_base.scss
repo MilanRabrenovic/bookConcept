@@ -1,10 +1,5 @@
 @import "bourbon";
 
-@mixin clearfix {
-  overflow: hidden;
-  @include has-layout;
-}
-
 @mixin screen($res-min, $res-max) {
     @media screen and (min-width: $res-min) and (max-width: $res-max) {
         @content;
@@ -59,10 +54,6 @@
     }
 }
 
-html {
-    font-size: 100%;
-}
-
 @mixin radial-gradient($from, $to) {
     background: -moz-radial-gradient(bottom, circle cover, $from 0%, $to 60%);
     background: -webkit-gradient(radial, bottom center, 0px, bottom center, 60%, color-stop(0%, $from), color-stop(60%, $to));
@@ -111,34 +102,6 @@ $rem-base: 16px !default;
     @return $remValues;
 }
 
-@mixin placeholder {
-    &::-webkit-input-placeholder {
-        @content;
-    }
-
-    &:-moz-placeholder {
-        @content;
-    }
-
-    &::-moz-placeholder {
-        @content;
-    }
-
-    &:-ms-input-placeholder {
-        @content;
-    }
-}
-
-@mixin placeholder-shown {
-    &::-webkit-input-placeholder {
-        @content;
-    }
-
-    &:placeholder-shown {
-        @content;
-    }
-}
-
 
 @function stroke($stroke, $color) {
   $shadow: ();
@@ -150,7 +113,6 @@ $rem-base: 16px !default;
   }
   @return $shadow;
 }
-
 
 @mixin stroke($stroke, $color) {
   text-shadow: stroke($stroke, $color);

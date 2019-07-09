@@ -1,0 +1,38 @@
+.btn {
+    min-height: rem(51);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: rem(51);
+    @include prefixer(transition, all 0.2s ease-in-out, ('moz', 'webkit'));
+    text-transform: uppercase;
+    font-size: rem(20);
+}
+
+.btn-outline {
+    border: 1px solid #111111;
+    padding: 0 rem(30);
+    color: $text-dark-color;
+
+    &:hover,
+    &:focus {
+        border-color: $text-dark-color;
+        background: $text-dark-color;
+        color: $main-color;
+    }
+}
+
+.btn-solid {
+    border: solid 1px #111111;
+    padding: 0 rem(30);
+    background: linear-gradient(324deg, #242424, #3b3b3b);
+    font-family: $primary-font-900;
+    color: $main-color;
+
+    &:hover,
+    &:focus {
+        color: $text-dark-color;
+        background: linear-gradient(324deg, transparent, transparent);
+        border: 1px solid #111111;
+    }
+}

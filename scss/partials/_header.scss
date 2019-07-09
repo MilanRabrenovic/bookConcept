@@ -1,0 +1,184 @@
+.main-header {
+    @include prefixer(transition, all 0.2s ease-in-out, ('moz', 'webkit'));
+    box-shadow: 0 5px 4px 0 rgba(0,0,0,0);
+    background: transparent;
+
+    &.offset-top {
+        background: #fff;
+        box-shadow: 0 5px 4px 0 rgba(0,0,0,0.05);
+        background: $main-color-darker;
+
+        .navbar-brand {
+            font-size: rem(43);
+        }
+    }
+
+    .navbar {
+        padding: rem(27 0);
+    }
+
+    .navbar-brand {
+        padding: 0;
+        margin: 0;
+        display: inline-flex;
+        font-size: rem(53);
+        @include prefixer(transition, all 0.2s ease-in-out, ('moz', 'webkit'));
+        color: #3e3d3f;
+    }
+}
+
+
+.navbar-expand-lg {
+    .navbar-nav {
+        margin-right: rem(-17);
+
+        .nav-item {
+            padding: 0 rem(17);
+
+            &.active {
+                .nav-link {
+                    &:before {
+                        width: 100%;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 0;
+            font-family: $primary-font-400;
+            color: $text-dark-color;
+            font-size: rem(20);
+            text-transform: uppercase;
+            min-height: rem(50);
+            line-height: rem(50);
+
+            &:not(.btn) {
+                height: 100%;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    height: 2px;
+                    opacity: 0;
+                    background: #383838;
+                    width: 0;
+                    left: 0;
+                    @include prefixer(transition, all 0.2s ease-in-out, ('moz', 'webkit'));
+                }
+
+                &:hover {
+                    &:before {
+                        width: 100%;
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &.btn-outline {
+                padding: rem(0 40);
+                &:hover {
+                    color: $main-color;
+                }
+            }
+
+            &.btn-solid {
+                padding: rem(0 35);
+                font-family: $primary-font-900;
+                color: #edcb50;
+            }
+        }
+    }
+}
+
+.hamburger {
+	padding: 0;
+	display: none;
+	cursor: pointer;
+    @include prefixer (transition, opacity filter 015s linear, ("moz", "webkit"));
+	font: inherit;
+	color: inherit;
+	text-transform: none;
+	background-color: transparent;
+	border: 0;
+    margin: 0;
+    margin-left: 5px;
+    overflow: visible;
+    z-index: 100;
+    &:hover {
+        opacity: 0.7;
+    }
+    @include max-screen(991px) {
+        display: block;
+    }
+    &[aria-expanded="true"] {
+        .hamburger-inner {
+            @include prefixer(transform, rotate(225deg), ("moz", "webkit"));
+            transition-delay: 0.12s;
+            transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            background-color: $text-dark-color;
+            &:before {
+                top: 0;
+                opacity: 0;
+                @include prefixer(transition, top 0.1s ease-out opacity 0.1s 0.12s ease-out, ("moz", "webkit"));
+                background-color: $text-dark-color;
+            }
+            &:after {
+                bottom: 0;
+                @include prefixer(transform, rotate(-90deg), ("moz", "webkit"));
+                @include prefixer(transition, bottom 0.1s ease-out transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), ("moz", "webkit"));
+                background-color: $text-dark-color;
+            }
+        }
+    }
+}
+.hamburger-box {
+	width: 25px;
+    height: 26px;
+    background: transparent;
+	display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include max-screen(479px){
+        width: 25px;
+        height: 20px;
+    }
+}
+.hamburger-inner {
+	display: block;
+	top: 50%;
+    margin-top: -2px;
+
+    &:before,
+    &:after {
+        content: "";
+        display: block;
+    }
+    &:before {
+        top: -9px;
+    }
+    &:after {
+        bottom: -9px;
+    }
+}
+.hamburger-inner,
+.hamburger-inner:before,
+.hamburger-inner:after {
+	width: 25px;
+	height: 3px;
+	background-color: $text-dark-color;
+	border-radius: 1px;
+    position: absolute;
+    @include prefixer(transition, all 0.4s ease, ("moz", "webkit"));
+    @include max-screen(479px){
+        width: 25px;
+    }
+}

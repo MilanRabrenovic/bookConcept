@@ -1,6 +1,16 @@
+// setup
 @import "base";
+@import "partials/bootstrap/bootstrap";
 @import "layout/normalize";
 @import "layout/typography";
 @import "partials/variables";
 @import "layout/layout";
 @import "partials/global";
+
+// components
+@import "partials/buttons";
+@import "partials/header";
+@import "partials/rating";
+
+// pages
+@import "pages/home";

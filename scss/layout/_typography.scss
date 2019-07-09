@@ -88,7 +88,6 @@
   }
   .ico-book-download:before {
     content: "\e902";
-    color: #fd0;
   }
   .ico-books:before {
     content: "\e903";
@@ -98,11 +97,9 @@
   }
   .ico-devices:before {
     content: "\e905";
-    color: #fd0;
   }
   .ico-leaf:before {
     content: "\e906";
-    color: #fd0;
   }
   .ico-logo:before {
     content: "\e907";
@@ -112,6 +109,12 @@
   }
   .ico-pen:before {
     content: "\e909";
+  }
+  .ico-star:before {
+    content: "\e90a";
+  }
+  .ico-star-solid:before {
+    content: "\e90b";
   }
 
 
@@ -160,21 +163,11 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
-* {
-    font-weight: 400;
-    font-style: normal;
-}
-
 a {
     background-color: transparent;
     text-decoration: none;
-}
-
-a:active,
-a:hover {
-    outline: 0;
-}
-
-address {
-    margin: 0;
+    &:active,
+    &:hover {
+        outline: 0;
+    }
 }

@@ -1,6 +1,70 @@
 body {
     color: $text-dark-color;
     line-height: 1.5;
-    font-size: rem(16);
+    font-size: rem(20);
     font-family: $primary-font-400, sans-serif;
+}
+
+figure {
+    margin: 0;
+}
+
+.section {
+
+    &--bg {
+        background: $light-bg;
+    }
+}
+
+.section-header {
+    text-align: center;
+}
+
+.section-title {
+    font-family: $primary-font-500;
+    font-size: rem(40);
+    line-height: 1;
+    color: $text-dark-color;
+
+    > span {
+        position: relative;
+        display: inline-block;
+
+        > span {
+            position: relative;
+            z-index: 1;
+        }
+
+        &:before,
+        &:after {
+            position: absolute;
+            content: '';
+            width: rem(42);
+            height: rem(42);
+            border: 1px solid #ffdd00;
+            border-radius: rem(6);
+            left: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        &:before {
+            @include prefixer(transform, translate(-60%, -50%), ('moz', 'webkit'));
+        }
+
+        &:after {
+            @include prefixer(transform, translate(-45%, -35%), ('moz', 'webkit'));
+        }
+    }
+
+    &--handwritten {
+        font-family: $handwritten-font-700;
+    }
+}
+
+.text {
+    font-family: $primary-font-400;
+    font-size: rem(20);
+    line-height: 1.2;
+    color: $text-dark-color;
 }

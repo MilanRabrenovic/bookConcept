@@ -3,10 +3,14 @@
     box-shadow: 0 5px 4px 0 rgba(0,0,0,0);
     background: transparent;
 
-    &.offset-top {
-        background: #fff;
+    &.menu-opened {
         box-shadow: 0 5px 4px 0 rgba(0,0,0,0.05);
-        background: $main-color-darker;
+        background: $main-color;
+    }
+
+    &.offset-top {
+        box-shadow: 0 5px 4px 0 rgba(0,0,0,0.05);
+        background: $main-color;
 
         .navbar-brand {
             font-size: rem(43);
@@ -33,13 +37,24 @@
         margin-right: rem(-17);
 
         .nav-item {
-            padding: 0 rem(17);
+
+            @include min-screen(992px) {
+                padding: 0 rem(17);
+            }
+            @include max-screen(991px) {
+                text-align: center;
+                margin-bottom: rem(20);
+            }
+
 
             &.active {
                 .nav-link {
                     &:before {
-                        width: 100%;
-                        opacity: 1;
+
+                        @include min-screen(992px) {
+                            opacity: 1;
+                            width: 100%;
+                        }
                     }
                 }
             }
@@ -72,10 +87,16 @@
 
                 &:hover {
                     &:before {
-                        width: 100%;
-                        opacity: 1;
+                        @include min-screen(992px) {
+                            width: 100%;
+                            opacity: 1;
+                        }
                     }
                 }
+            }
+
+            &.btn {
+                margin: 0 rem(17);
             }
 
             &.btn-outline {
@@ -89,6 +110,11 @@
                 padding: rem(0 35);
                 font-family: $primary-font-900;
                 color: #edcb50;
+
+                &:focus,
+                &:hover {
+                    color: $text-dark-color
+                }
             }
         }
     }

@@ -2,6 +2,8 @@
     position: relative;
     direction: rtl;
     display: flex;
+    justify-content: center;
+    margin-bottom: rem(10);
 
     input{
         position: absolute;
@@ -10,7 +12,7 @@
         opacity: 0;
         z-index: 5;
 
-        @for $i from 1 through 5 {
+        @for $i from 1 through 6 {
             &:nth-of-type(#{$i}) {
             right:  #{$i * 50px};
             }

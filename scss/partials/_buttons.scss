@@ -25,14 +25,47 @@
 .btn-solid {
     border: solid 1px #111111;
     padding: 0 rem(30);
-    background: linear-gradient(324deg, #242424, #3b3b3b);
     font-family: $primary-font-900;
     color: $main-color;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 1;
+        @include prefixer(transition, all 0.2s ease-in-out, ('moz', 'webkit'));
+        background: linear-gradient(324deg, #242424, #3b3b3b);
+    }
+
+    &:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0;
+        background: linear-gradient(324deg,  #f2c94c, #d9b22b);
+        @include prefixer(transition, all 0.2s ease-in-out, ('moz', 'webkit'));
+    }
 
     &:hover,
     &:focus {
         color: $text-dark-color;
-        background: linear-gradient(324deg, transparent, transparent);
         border: 1px solid #111111;
+        &:before {
+            opacity: 0;
+        }
+
+        &::after {
+            opacity: 1;
+        }
     }
 }

@@ -6092,13 +6092,21 @@ figure {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
+    @media screen and (max-width: 349px) {
+      .hero .btn-holder {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center; } }
   .hero .btn {
     min-width: 12.5rem; }
+    @media screen and (max-width: 349px) {
+      .hero .btn {
+        min-width: 11.5rem; } }
     .hero .btn:first-of-type {
       margin-right: 2rem; }
       @media screen and (max-width: 349px) {
         .hero .btn:first-of-type {
-          margin-right: 1rem; } }
+          margin-right: 0.625rem; } }
 
 .hero-img__holder {
   position: absolute;
@@ -6140,7 +6148,8 @@ figure {
 
 .hero-content {
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  max-width: 100%; }
 
 .services {
   padding-top: 4.5rem;
@@ -6155,13 +6164,24 @@ figure {
   margin: 0 auto; }
   .services-holder .row {
     margin: 0 -23px; }
+    @media screen and (max-width: 767px) {
+      .services-holder .row {
+        margin: 0 -15px; } }
   .services-holder [class^="col-"],
   .services-holder [class*=" col-"] {
     padding-left: 23px;
     padding-right: 23px; }
+    @media screen and (max-width: 767px) {
+      .services-holder [class^="col-"],
+      .services-holder [class*=" col-"] {
+        padding: 0 15px; } }
     .services-holder [class^="col-"]:not(:last-of-type) .service,
     .services-holder [class*=" col-"]:not(:last-of-type) .service {
       margin-bottom: 46px; }
+      @media screen and (max-width: 767px) {
+        .services-holder [class^="col-"]:not(:last-of-type) .service,
+        .services-holder [class*=" col-"]:not(:last-of-type) .service {
+          margin-bottom: 30px; } }
 
 .service {
   background: #fff;

@@ -32,15 +32,22 @@
     }
     .btn-holder {
         display: flex;
+
+        @include max-screen(349px) {
+            justify-content: center;
+        }
     }
     .btn {
         min-width: rem(200);
+        @include max-screen(349px) {
+            min-width: rem(184);
+        }
 
         &:first-of-type {
             margin-right: rem(32);
 
             @include max-screen(349px) {
-                margin-right: rem(16);
+                margin-right: rem(10);
             }
         }
     }
@@ -94,6 +101,7 @@
 .hero-content {
     position: relative;
     z-index: 1;
+    max-width: 100%;
 }
 
 
@@ -117,6 +125,10 @@
 
     .row {
         margin: 0 -23px;
+
+        @include max-screen(767px) {
+            margin: 0 -15px;
+        }
     }
 
     [class^="col-"],
@@ -124,9 +136,17 @@
         padding-left: 23px;
         padding-right: 23px;
 
+        @include max-screen(767px) {
+            padding: 0 15px;
+        }
+
         &:not(:last-of-type) {
             .service {
                 margin-bottom: 46px;
+
+                @include max-screen(767px) {
+                    margin-bottom: 30px;
+                }
             }
         }
     }

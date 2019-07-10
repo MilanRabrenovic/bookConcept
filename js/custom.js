@@ -22,9 +22,4 @@ $(document).ready(function () {
             nextArrow: '<button class="slick-arrow--next"><i class="ico-arrow-right"></i></button>'
         });
     }
-
-    var scene = document.getElementById('scene');
-    var parallaxInstance = new Parallax(scene, {
-    relativeInput: true
-    });
 });

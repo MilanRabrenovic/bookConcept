@@ -32,14 +32,18 @@
     width: rem(457px);
     left: 48.7%;
     transform: rotate(1deg) translateX(-50%);
-    top: rem(280);
+    top: get-vh(280px);
     position: absolute;
     z-index: 2;
     text-align: center;
-    padding-top: rem(90);
+    padding-top: get-vh(90px);
 
     @include max-screen(1023px) {
-        top: rem(360)
+        top: get-vh(320px);
+    }
+
+    @include max-screen(320px) {
+        top: get-vh(280px);
     }
 
     .btn-solid {
@@ -55,7 +59,7 @@
     font-size: rem(70);
     line-height: 1;
     color: #000000;
-    margin-bottom: rem(70);
+    margin-bottom: get-vh(70px);
     display: block;
     text-transform: uppercase;
 }
@@ -66,7 +70,7 @@
     line-height: 1;
     color: $main-color;
     display: block;
-    margin-bottom: rem(15);
+    margin-bottom: get-vh(15px);
     font-style: normal;
 }
 
@@ -76,7 +80,7 @@
     line-height: 1;
     color: #000000;
     display: block;
-    margin-bottom: rem(72);
+    margin-bottom: get-vh(72px);
     text-transform: uppercase;
     letter-spacing: rem(7);
 }

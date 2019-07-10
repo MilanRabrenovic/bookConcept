@@ -69,6 +69,12 @@
     @return ($target/$vw-context) * 1vw;
 }
 
+// convert px to vw
+@function get-vh($object) {
+    $vh: (1080 * 0.01) * 1px;
+    @return ($object / $vh) * 1vh;
+}
+
 // convert px to rem
 $rem-base: 16px !default;
 

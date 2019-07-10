@@ -26,6 +26,11 @@ figure {
     line-height: 1;
     color: $text-dark-color;
 
+
+    @include max-screen(439px) {
+        font-size: rem(30);
+    }
+
     > span {
         position: relative;
         display: inline-block;
@@ -46,6 +51,10 @@ figure {
             left: 0;
             bottom: 0;
             z-index: 0;
+            @include max-screen(439px) {
+                width: rem(32);
+                height: rem(32);
+            }
         }
 
         &:before {
@@ -60,6 +69,10 @@ figure {
     &--handwritten {
         font-family: $handwritten-font-700;
         font-size: rem(60);
+
+        @include max-screen(349px) {
+            font-size: rem(52);
+        }
     }
 }
 
